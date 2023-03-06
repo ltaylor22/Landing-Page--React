@@ -1,20 +1,34 @@
-import Image from "next/image";
+import { Card } from "@/components/Card";
+import { Footer } from "@/components/Footer";
+import { Jumbotron } from "@/components/Jumbotron";
+import { Navbar } from "@/components/Navbar";
 
 export default function Home() {
-  return (
-      <div className="text-center">
-        <h1 className="text-center mt-5">Hello Rigo!</h1>
-        <p>
-          <Image src='/images/rigo-baby.jpeg' alt='4geeks' width={300} height={254} />
-        </p>
-        <a href="#" className="btn btn-success">
-          If you see this green button... bootstrap is working...
-        </a>
-        <p>
-          Made by{" "}
-          <a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-          love!
-        </p>
-      </div>
-  )
-}
+  return [
+    <div className="container-flexbox">
+    <Navbar />
+    </div>,
+    <div className="container-flexbox">
+      <Jumbotron />
+    </div>,
+    <div class="container">
+      <div className="row">
+        <div className="col-3">
+          <Card />
+        </div>
+        <div className="col-3">
+          <Card />
+        </div>
+        <div className="col-3">
+          <Card />
+        </div>
+        <div className="col-3">
+          <Card />
+        </div>
+      </div>,
+    <div className="container-flexbox">
+      <Footer />
+    </div>
+    </div>
+  ]
+  };
